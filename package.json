@@ -28,8 +28,8 @@
     "lint-staged": "lint-staged",
     "lint:es": "eslint '**/*.{js,ts,tsx}'",
     "lint:es:fix": "npm run lint:es -- --fix",
-    "prettier": "prettier '**/*' --check . '!**/*.{js,tsx,ts}'",
-    "prettier:fix": "prettier '**/*' --write . '!**/*.{js,tsx,ts}'"
+    "prettier": "prettier '**/*.{json,yaml,md}' --check ",
+    "prettier:fix": "prettier '**/*.{json,yaml,md}' --write "
   },
   "lint-staged": {
     "**/*.{js,ts,tsx}": [
