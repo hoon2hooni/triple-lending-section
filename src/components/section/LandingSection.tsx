@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import Indicators from './Indicators'
+
 import tripleLogo from '@assets/triple2x.png'
 import playStoreAward from '@assets/play-store2x.png'
 import appleAward from '@assets/badge-apple4x.png'
@@ -42,11 +44,6 @@ const WrapperRight = styled.div`
   margin-top: 150px;
   margin-left: 623px;
 `
-const Mention = styled.div`
-  font-size: 36px;
-  letter-spacing: -1px;
-  margin-bottom: 20px;
-`
 
 const AwardWrapper = styled.div`
   height: 64px;
@@ -77,24 +74,7 @@ const LandingSection = () => {
       <Wrapper>
         <ContentWrapper img={tripleLogo}>2021년 12월 기준</ContentWrapper>
         <WrapperRight>
-          <Mention>
-            <strong>
-              <span>700</span>만 명
-            </strong>
-            의 여행자
-          </Mention>
-          <Mention>
-            <strong>
-              <span>100</span>만 명
-            </strong>
-            의 여행 리뷰
-          </Mention>
-          <Mention>
-            <strong>
-              <span>470</span>만 명
-            </strong>
-            의 여행 일정
-          </Mention>
+          <Indicators />
           <AwardWrapper>
             <EachWrapper img={playStoreAward}>
               2018 구글 플레이스토어
