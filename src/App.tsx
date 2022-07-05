@@ -1,7 +1,7 @@
 import GlobalStyles from './GlobalStyles'
 
-import Layout from '@components/Layout'
-import LandingSection from '@components/LandingSection'
+import Layout from '@components/common/Layout'
+import LandingSection from '@components/section/LandingSection'
 
 function App() {
   return (
