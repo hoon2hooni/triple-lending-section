@@ -26,15 +26,15 @@ const WrapperRight = styled.div`
 `
 
 const LandingSection = () => {
-  const mounted700msLater = useDelayedMount(700)
   const mounted800msLater = useDelayedMount(800)
+  const mounted1600msLater = useDelayedMount(1600)
   return (
     <Section>
       <Wrapper>
         <LeftContentLogo />
         <WrapperRight>
-          {mounted700msLater && <Indicators />}
-          {mounted800msLater && <Awards />}
+          {mounted800msLater && <Indicators />}
+          {mounted1600msLater && <Awards />}
         </WrapperRight>
       </Wrapper>
     </Section>

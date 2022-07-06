@@ -15,6 +15,7 @@ const slideUp = (height: string) => keyframes`
 const AnimationWrapper = styled.div<{ height: string; duration: string }>`
   animation-name: ${(props) => slideUp(props.height)};
   animation-duration: ${(props) => props.duration};
+  animation-timing-function: ease-out;
 `
 
 const SlideUp: FC<{ height: string; duration: string; children: ReactNode }> =
