@@ -4,6 +4,8 @@ import LeftContentLogo from './LeftContentLogo'
 import Indicators from './Indicators'
 import Awards from './Awards'
 
+import useDelayedMount from '@hooks/useDelayedMount'
+
 const Section = styled.div`
   display: flex;
   min-width: 1200px;
@@ -24,13 +26,15 @@ const WrapperRight = styled.div`
 `
 
 const LandingSection = () => {
+  const mounted700msLater = useDelayedMount(700)
+  const mounted800msLater = useDelayedMount(800)
   return (
     <Section>
       <Wrapper>
         <LeftContentLogo />
         <WrapperRight>
-          <Indicators />
-          <Awards />
+          {mounted700msLater && <Indicators />}
+          {mounted800msLater && <Awards />}
         </WrapperRight>
       </Wrapper>
     </Section>
