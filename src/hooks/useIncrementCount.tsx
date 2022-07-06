@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 
 import { easeOutExpo } from '@utils/easeOut'
 
@@ -12,17 +12,27 @@ const increaseCountUntilMax =
 
 const useIncrementCount = (max: number) => {
   const [count, setCount] = useState(0)
-  const currentTimeRef = useRef(0)
-  // 1frame이란 1초에 60번 이기에 상수로 지정
-  const FRAME_RATE_UNIT_SEC = 1 / 60
+  const requestId = useRef<number>()
+  const prevTimeRef = useRef<number>()
+  const currentTimeRef = useRef<number>(0)
+
+  const animate = useCallback(
+    (time: number) => {
+      if (prevTimeRef.current) {
+        const deltaTime = (time - prevTimeRef.current) / 1000
+        setCount(increaseCountUntilMax(currentTimeRef.current, max))
+        currentTimeRef.current += deltaTime
+      }
+      prevTimeRef.current = time
+      requestId.current = requestAnimationFrame(animate)
+    },
+    [max],
+  )
+
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCount(increaseCountUntilMax(currentTimeRef.current, max))
-      currentTimeRef.current += FRAME_RATE_UNIT_SEC
-      // setInterval은 ms단위이기에 * 1000을 해주었음
-    }, FRAME_RATE_UNIT_SEC * 1000)
-    return () => clearInterval(timer)
-  }, [FRAME_RATE_UNIT_SEC, max])
+    requestId.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(requestId.current as number)
+  }, [max, animate])
   return count
 }
 
