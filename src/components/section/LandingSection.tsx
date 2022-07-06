@@ -4,6 +4,7 @@ import Indicators from './Indicators'
 import Awards from './Awards'
 
 import tripleLogo from '@assets/triple2x.png'
+import SlideUp from '@components/animation/SlideUp'
 
 interface BackgroundImageProps {
   img: string
@@ -21,7 +22,6 @@ const Wrapper = styled.div`
   display: flex;
   width: 1039px;
   height: 100%;
-  justify-content: space-between;
 `
 
 const LeftContentLogo = styled.div<BackgroundImageProps>`
@@ -35,7 +35,6 @@ const LeftContentLogo = styled.div<BackgroundImageProps>`
   background-image: url(${(props) => props.img});
   background-repeat: no-repeat;
   text-align: center;
-  font-family: sans-serif;
   color: rgba(58, 58, 58, 0.7);
 `
 
@@ -48,7 +47,9 @@ const LandingSection = () => {
   return (
     <Section>
       <Wrapper>
-        <LeftContentLogo img={tripleLogo}>2021년 12월 기준</LeftContentLogo>
+        <SlideUp height="20px" duration="0.7s">
+          <LeftContentLogo img={tripleLogo}>2021년 12월 기준</LeftContentLogo>
+        </SlideUp>
         <WrapperRight>
           <Indicators />
           <Awards />

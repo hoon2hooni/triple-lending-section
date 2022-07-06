@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import playStoreAwardImg from '@assets/play-store2x.png'
 import appleAwardImg from '@assets/badge-apple4x.png'
+import SlideUp from '@components/animation/SlideUp'
 
 interface BackgroundImageProps {
   img: string
@@ -32,18 +33,20 @@ const AwardWrapper = styled.div<BackgroundImageProps>`
 
 const Awards = () => {
   return (
-    <AwardsWrapper>
-      <AwardWrapper img={playStoreAwardImg}>
-        2018 구글 플레이스토어
-        <br />
-        올해의 앱 최우수상 수상
-      </AwardWrapper>
-      <AwardWrapper img={appleAwardImg}>
-        2018 애플 앱스토어
-        <br />
-        오늘의 여행앱 선정
-      </AwardWrapper>
-    </AwardsWrapper>
+    <SlideUp height="10px" duration="0.7s">
+      <AwardsWrapper>
+        <AwardWrapper img={playStoreAwardImg}>
+          2018 구글 플레이스토어
+          <br />
+          올해의 앱 최우수상 수상
+        </AwardWrapper>
+        <AwardWrapper img={appleAwardImg}>
+          2018 애플 앱스토어
+          <br />
+          오늘의 여행앱 선정
+        </AwardWrapper>
+      </AwardsWrapper>
+    </SlideUp>
   )
 }
 
