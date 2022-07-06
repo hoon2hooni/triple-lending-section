@@ -14,7 +14,7 @@ const Indicators = () => {
   const reviewCount = useIncrementCount(21)
   const saveCount = useIncrementCount(650)
   return (
-    <SlideUp height="20px" duration="0.7s">
+    <SlideUp distance="20px" duration="0.7s">
       <Indicator>
         <strong>
           <span>{travelerCount}</span>만 명

@@ -13,7 +13,6 @@ const increaseCountUntilMax =
 const useIncrementCount = (max: number) => {
   const [count, setCount] = useState(0)
   const currentTimeRef = useRef(0)
-
   // 1frame이란 1초에 60번 이기에 상수로 지정
   const FRAME_RATE_UNIT_SEC = 1 / 60
   useEffect(() => {

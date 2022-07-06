@@ -33,7 +33,7 @@ const AwardWrapper = styled.div<BackgroundImageProps>`
 
 const Awards = () => {
   return (
-    <SlideUp height="10px" duration="0.7s">
+    <SlideUp distance="10px" duration="0.7s">
       <AwardsWrapper>
         <AwardWrapper img={playStoreAwardImg}>
           2018 구글 플레이스토어

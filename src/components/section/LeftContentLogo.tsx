@@ -24,7 +24,7 @@ const LeftContentLogoStyle = styled.div<BackgroundImageProps>`
 
 const LeftContentLogo: FC = () => {
   return (
-    <SlideUp height="40px" duration="0.7s">
+    <SlideUp distance="40px" duration="0.7s">
       <LeftContentLogoStyle img={tripleLogo}>
         2021년 12월 기준
       </LeftContentLogoStyle>
