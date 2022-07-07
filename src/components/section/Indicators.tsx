@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 import SlideUp from '@components/animation/SlideUp'
-import useIncrementCount from '@hooks/useIncrementCount'
+import useRaf from '@hooks/useRaf'
+import { easeOutExpo } from '@utils/easeOut'
 
 const Indicator = styled.div`
   font-size: 36px;
@@ -10,9 +11,10 @@ const Indicator = styled.div`
 `
 
 const Indicators = () => {
-  const travelerCount = useIncrementCount(350)
-  const reviewCount = useIncrementCount(21)
-  const saveCount = useIncrementCount(650)
+  const elapsedTime = useRaf(2)
+  const travelerCount = Math.floor(easeOutExpo(elapsedTime, 0, 350, 2))
+  const reviewCount = Math.floor(easeOutExpo(elapsedTime, 0, 21, 2))
+  const saveCount = Math.floor(easeOutExpo(elapsedTime, 0, 650, 2))
   return (
     <SlideUp distance="20px" duration="0.7s">
       <Indicator>
