@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react'
+import { useState, useLayoutEffect } from 'react'
 
 const useDelayedMount = (ms: number) => {
   const [isMounted, setIsMounted] = useState(false)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const id = setTimeout(() => {
       setIsMounted(true)
     }, ms)
