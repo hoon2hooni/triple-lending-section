@@ -27,7 +27,7 @@ const AwardWrapper = styled.div<BackgroundImageProps>`
   background-repeat: no-repeat;
   color: rgba(58, 58, 58, 0.8);
   font-weight: bold;
-  width: 197px;
+  width: 199px;
   box-sizing: border-box;
 `
 
