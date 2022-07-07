@@ -45,6 +45,11 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^@utils$": "<rootDir>/src/utils/"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
