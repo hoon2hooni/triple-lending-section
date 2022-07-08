@@ -1,9 +1,11 @@
+import { ReactElement } from 'react'
+
 import GlobalStyles from './GlobalStyles'
 
 import Layout from '@components/common/Layout'
 import LandingSection from '@components/section/LandingSection'
 
-function App() {
+function App(): ReactElement {
   return (
     <>
       <GlobalStyles />

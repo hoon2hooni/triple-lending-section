@@ -4,6 +4,7 @@ import styled, { keyframes } from 'styled-components'
 interface SlideProps {
   distance: string
   duration: string
+  delay?: string
 }
 
 const slideUp = (distance: string) => keyframes`
@@ -21,15 +22,19 @@ const AnimationWrapper = styled.div<SlideProps>`
   animation-name: ${({ distance }) => slideUp(distance)};
   animation-duration: ${({ duration }) => duration};
   animation-timing-function: ease-out;
+  animation-delay: ${({ delay = '0s' }) => delay};
+  animation-fill-mode: forwards;
+  opacity: 0;
 `
 
 const SlideUp: FC<SlideProps & { children: ReactNode }> = ({
   distance,
   duration,
+  delay,
   children,
 }) => {
   return (
-    <AnimationWrapper distance={distance} duration={duration}>
+    <AnimationWrapper distance={distance} duration={duration} delay={delay}>
       {children}
     </AnimationWrapper>
   )

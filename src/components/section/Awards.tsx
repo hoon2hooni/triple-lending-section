@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { FC } from 'react'
 
 import playStoreAwardImg from '@assets/play-store2x.png'
 import appleAwardImg from '@assets/badge-apple4x.png'
@@ -31,9 +32,9 @@ const AwardWrapper = styled.div<BackgroundImageProps>`
   box-sizing: border-box;
 `
 
-const Awards = () => {
+const Awards: FC = () => {
   return (
-    <SlideUp distance="10px" duration="0.7s">
+    <SlideUp distance="10px" duration="0.7s" delay="0.2s">
       <AwardsWrapper>
         <AwardWrapper img={playStoreAwardImg}>
           2018 구글 플레이스토어

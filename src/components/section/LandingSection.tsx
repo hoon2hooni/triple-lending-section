@@ -1,10 +1,9 @@
 import styled from 'styled-components'
+import { FC } from 'react'
 
 import LeftContentLogo from './LeftContentLogo'
 import Indicators from './Indicators'
 import Awards from './Awards'
-
-import useDelayedMount from '@hooks/useDelayedMount'
 
 const Section = styled.div`
   display: flex;
@@ -25,16 +24,14 @@ const WrapperRight = styled.div`
   margin-left: 623px;
 `
 
-const LandingSection = () => {
-  const mounted800msLater = useDelayedMount(800)
-  const mounted1600msLater = useDelayedMount(1600)
+const LandingSection: FC = () => {
   return (
     <Section>
       <Wrapper>
         <LeftContentLogo />
         <WrapperRight>
-          {mounted800msLater && <Indicators />}
-          {mounted1600msLater && <Awards />}
+          <Indicators />
+          <Awards />
         </WrapperRight>
       </Wrapper>
     </Section>
