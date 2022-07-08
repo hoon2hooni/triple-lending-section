@@ -12,7 +12,7 @@ const Indicator = styled.div`
 `
 
 const Indicators: FC = () => {
-  const elapsedTime = useRaf(2)
+  const elapsedTime = useRaf(2, 0.1)
   const travelerCount = Math.floor(easeOutExpo(elapsedTime, 0, 350, 2))
   const reviewCount = Math.floor(easeOutExpo(elapsedTime, 0, 21, 2))
   const saveCount = Math.floor(easeOutExpo(elapsedTime, 0, 650, 2))
