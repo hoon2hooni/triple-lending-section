@@ -145,3 +145,30 @@ npx serve -s build
 ├── tsconfig.json
 └── tsconfig.paths.json
 ```
+
+## 6. 결과
+
+### 애니메이션
+
+- 700ms 구간
+- 100ms 간격
+
+chrome 개발자도구 애니메이션으로 확인
+<img width="1664" alt="애니메이션 결과값" src="https://user-images.githubusercontent.com/70311004/177907316-f6d0a54c-d23c-4ca9-ae28-8e78a5f6d313.png">
+
+### 숫자 카운팅
+
+- 2초 동안 0부터 목표치까지 증가
+- 0.1초 이후부터 등장하기에 0.1초 딜레이를 줌
+- 프레임저하 없음
+
+chrome 개발자도구 퍼포먼스탭으로 확인
+(indicator 컴포넌트만의 정확한 측정을 위해 slideUp효과 제거한 상태의 결과값 입니다.)
+
+### 증가 시작
+
+<img width="684" alt="image" src="https://user-images.githubusercontent.com/70311004/177909307-b4c6b539-97dd-4418-b63b-a609819e2d17.png">
+
+### 증가 종료
+
+<img width="1014" alt="image" src="https://user-images.githubusercontent.com/70311004/177909545-b659e189-124a-4edc-a00e-e242029e0a10.png">
