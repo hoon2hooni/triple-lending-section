@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { FC } from 'react'
 
-import LeftContentLogo from './LeftContentLogo'
-import Indicators from './Indicators'
-import Awards from './Awards'
+import SlideUp from '@components/animation/SlideUp'
+import LeftContentLogo from '@components/section/LeftContentLogo'
+import Indicators from '@components/section/Indicators'
+import Awards from '@components/section/Awards'
 
 const Section = styled.div`
   display: flex;
@@ -28,10 +29,16 @@ const LandingSection: FC = () => {
   return (
     <Section>
       <Wrapper>
-        <LeftContentLogo />
+        <SlideUp distance="40px" duration="0.7s">
+          <LeftContentLogo />
+        </SlideUp>
         <WrapperRight>
-          <Indicators />
-          <Awards />
+          <SlideUp distance="20px" duration="0.7s" delay="0.1s">
+            <Indicators />
+          </SlideUp>
+          <SlideUp distance="10px" duration="0.7s" delay="0.2s">
+            <Awards />
+          </SlideUp>
         </WrapperRight>
       </Wrapper>
     </Section>

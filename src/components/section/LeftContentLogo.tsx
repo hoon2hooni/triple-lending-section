@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 
-import SlideUp from '@components/animation/SlideUp'
 import tripleLogo from '@assets/triple2x.png'
 
 interface BackgroundImageProps {
@@ -24,11 +23,9 @@ const LeftContentLogoStyle = styled.div<BackgroundImageProps>`
 
 const LeftContentLogo: FC = () => {
   return (
-    <SlideUp distance="40px" duration="0.7s">
-      <LeftContentLogoStyle img={tripleLogo}>
-        2021년 12월 기준
-      </LeftContentLogoStyle>
-    </SlideUp>
+    <LeftContentLogoStyle img={tripleLogo}>
+      2021년 12월 기준
+    </LeftContentLogoStyle>
   )
 }
 

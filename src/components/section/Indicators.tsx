@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 
-import SlideUp from '@components/animation/SlideUp'
 import useRaf from '@hooks/useRaf'
 import { easeOutExpo } from '@utils/easeOut'
 
@@ -17,7 +16,7 @@ const Indicators: FC = () => {
   const reviewCount = Math.floor(easeOutExpo(elapsedTime, 0, 21, 2))
   const saveCount = Math.floor(easeOutExpo(elapsedTime, 0, 650, 2))
   return (
-    <SlideUp distance="20px" duration="0.7s" delay="0.1s">
+    <>
       <Indicator>
         <strong>
           <span>{travelerCount}</span>만 명
@@ -36,7 +35,7 @@ const Indicators: FC = () => {
         </strong>
         의 저장
       </Indicator>
-    </SlideUp>
+    </>
   )
 }
 
