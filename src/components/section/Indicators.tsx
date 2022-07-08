@@ -12,22 +12,22 @@ const Indicator = styled.div`
 
 const Indicators: FC = () => {
   const elapsedTime = useRaf(2, 0.1)
-  const travelerCount = Math.floor(easeOutExpo(elapsedTime, 0, 350, 2))
+  const userCount = Math.floor(easeOutExpo(elapsedTime, 0, 350, 2))
   const reviewCount = Math.floor(easeOutExpo(elapsedTime, 0, 21, 2))
   const saveCount = Math.floor(easeOutExpo(elapsedTime, 0, 650, 2))
   return (
     <>
       <Indicator>
         <strong>
-          <span>{travelerCount}</span>만 명
+          <span>{userCount}</span>만 명
         </strong>
-        의 여행자
+        의 사용자
       </Indicator>
       <Indicator>
         <strong>
           <span>{reviewCount}</span>만 개
         </strong>
-        의 여행 리뷰
+        의 리뷰
       </Indicator>
       <Indicator>
         <strong>
